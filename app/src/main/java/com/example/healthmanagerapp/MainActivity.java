@@ -24,36 +24,24 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Set button On Click Listeners
-        healthHistoryButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, HealthHistoryPage.class);
-                startActivity(i);
-            }
+        healthHistoryButton.setOnClickListener(view -> {
+            Intent i = new Intent(MainActivity.this, HealthHistoryPage.class);
+            startActivity(i);
         });
 
-        medicationsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, MedicationsPage.class);
-                startActivity(i);
-            }
+        medicationsButton.setOnClickListener(view -> {
+            Intent i = new Intent(MainActivity.this, MedicationsPage.class);
+            startActivity(i);
         });
 
-        vitalsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, VitalsPage.class);
-                startActivity(i);
-            }
+        vitalsButton.setOnClickListener(view -> {
+            Intent i = new Intent(MainActivity.this, VitalsPage.class);
+            startActivity(i);
         });
 
-        notesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, NotesPage.class);
-                startActivity(i);
-            }
+        notesButton.setOnClickListener(view -> {
+            Intent i = new Intent(MainActivity.this, NotesPage.class);
+            startActivity(i);
         });
 
     }

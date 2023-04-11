@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/main_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddHealthHistoryPage">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="40dp"
+        android:src="@drawable/health_icon"
+        app:tint="@color/icon_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/enterDiagnosis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/font_color"
+        android:layout_margin="20dp"
+        android:hint="Enter Health Problem..."
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/enterDateDiagnosed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/font_color"
+        android:hint="Enter Date Diagnosed..."
+        android:layout_margin="20dp"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/enterDiagnosedBy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/font_color"
+        android:hint="Diagnosed By..."
+        android:layout_margin="20dp"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/enteredImportantInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/font_color"
+        android:hint="Important Information..."
+        android:layout_margin="20dp"
+        android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/enterHealthHistorySaveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/icon_color"
+        android:text="SAVE"
+        android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

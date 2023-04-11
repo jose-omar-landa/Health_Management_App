@@ -12,6 +12,9 @@
         android:theme="@style/Theme.HealthManagerApp"
         tools:targetApi="31">
         <activity
+            android:name=".AddHealthHistoryPage"
+            android:exported="false" />
+        <activity
             android:name=".NotesPage"
             android:exported="false" />
         <activity
