@@ -8,32 +8,18 @@
     android:background="@color/main_background"
     tools:context=".HealthHistoryPage">
 
-    <LinearLayout
-        android:id="@+id/linearLayout01"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+    <ImageButton
+        android:id="@+id/addHealthHistButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@color/main_background"
+        android:src="@drawable/add_circle_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.948"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="horizontal" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout02"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout01" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout03"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout02" />
+        app:tint="@color/icon_color" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
