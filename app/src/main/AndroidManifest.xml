@@ -7,28 +7,37 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="My Health Manager"
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthManagerApp"
         tools:targetApi="31">
         <activity
-            android:name=".AddHealthHistoryPage"
+            android:name=".UpdateHealthHistoryPage"
             android:exported="false" />
+        <activity
+            android:name=".AddHealthHistoryPage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".NotesPage"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".VitalsPage"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".HealthHistoryPage"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MedicationsPage"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

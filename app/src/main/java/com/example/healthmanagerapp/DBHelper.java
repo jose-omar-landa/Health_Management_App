@@ -70,6 +70,25 @@ public class DBHelper extends SQLiteOpenHelper {
         return healthHistoryModalArrayList;
     }
 
+    public void deleteHealthHistory(String problemName) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME, "probName=?", new String[]{problemName});
+        db.close();
+    }
+
+    public void updateHealthHistory(String originalName, String problemName, String diagDate, String diagBy, String otherInfo) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(PROB_NAME_COL, problemName);
+        values.put(DIAG_DATE_COL, diagDate);
+        values.put(DIAG_BY_COL, diagBy);
+        values.put(OTHER_INFO_COL, otherInfo);
+
+        db.update(TABLE_NAME, values, "name=?", new String[]{originalName});
+        db.close();
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
