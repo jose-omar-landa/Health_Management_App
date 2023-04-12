@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "HealthManagerDatabase";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     private static final String TABLE_NAME = "HealthHistory";
     private static final String ID_COL = "id";
     private static final String PROB_NAME_COL = "probName";
@@ -70,6 +70,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return healthHistoryModalArrayList;
     }
 
+
     public void deleteHealthHistory(String problemName) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_NAME, "probName=?", new String[]{problemName});
@@ -85,7 +86,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(DIAG_BY_COL, diagBy);
         values.put(OTHER_INFO_COL, otherInfo);
 
-        db.update(TABLE_NAME, values, "name=?", new String[]{originalName});
+        db.update(TABLE_NAME, values, "probName=?", new String[]{originalName});
         db.close();
     }
 
@@ -94,7 +95,6 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(sqLiteDatabase);
     }
-
 
 
 }

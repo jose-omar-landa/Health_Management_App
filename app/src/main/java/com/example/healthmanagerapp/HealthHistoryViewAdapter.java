@@ -43,6 +43,22 @@ public class HealthHistoryViewAdapter extends RecyclerView.Adapter<HealthHistory
         holder.diagDate.setText(modal.getDiagnosedDate());
         holder.diagBy.setText(modal.getDiagnosedBy());
         holder.otherInfo.setText(modal.getOtherInfo());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, SingleViewHealthHistory.class);
+
+                i.putExtra("probName", modal.getHealthProblem());
+                i.putExtra("diagDate", modal.getDiagnosedDate());
+                i.putExtra("diagnosedBy", modal.getDiagnosedBy());
+                i.putExtra("otherInfo", modal.getOtherInfo());
+
+                context.startActivity(i);
+            }
+        });
+
+
     }
 
     @Override
