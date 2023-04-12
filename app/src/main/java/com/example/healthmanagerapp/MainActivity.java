@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton healthHistoryButton, medicationsButton, vitalsButton, notesButton;
+    private ImageButton healthHistoryButton, medicationsButton, vitalsButton, notesButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
