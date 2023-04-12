@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "HealthManagerDatabase";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String TABLE_NAME = "HealthHistory";
     private static final String ID_COL = "id";
     private static final String PROB_NAME_COL = "probName";
@@ -33,7 +33,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 + PROB_NAME_COL + " TEXT,"
                 + DIAG_DATE_COL + " TEXT,"
                 + DIAG_BY_COL + " TEXT,"
-                + OTHER_INFO_COL + "TEXT)";
+                + OTHER_INFO_COL + " TEXT)";
 
         sqLiteDatabase.execSQL(query);
     }
