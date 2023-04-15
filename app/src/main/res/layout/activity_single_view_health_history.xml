@@ -25,6 +25,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="12sp"
             android:text="Health Problem: "
             android:textColor="@color/font_color"/>
 
@@ -35,13 +38,16 @@
             android:textSize="20sp"
             android:layout_height="wrap_content"
             android:textColor="@color/font_color"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:textAlignment="center"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textStyle="bold"
             android:layout_margin="10dp"
+            android:textSize="12sp"
             android:text="Date Diagnosed: "
             android:textColor="@color/font_color"/>
 
@@ -52,13 +58,16 @@
             android:text="content"
             android:textSize="20sp"
             android:textColor="@color/font_color"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:textAlignment="center"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="12sp"
             android:text="Diagnosed By: "
             android:textColor="@color/font_color"/>
 
@@ -69,13 +78,16 @@
             android:text="content"
             android:textSize="20sp"
             android:textColor="@color/font_color"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:textAlignment="center"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="12sp"
             android:text="Other Information: "
             android:textColor="@color/font_color"/>
 
@@ -86,7 +98,7 @@
             android:text="content"
             android:textSize="20sp"
             android:textColor="@color/font_color"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:textAlignment="center"/>
 
     </LinearLayout>

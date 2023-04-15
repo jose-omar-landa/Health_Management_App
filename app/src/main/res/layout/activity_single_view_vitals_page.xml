@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="40dp"
+        android:layout_margin="10dp"
         android:src="@drawable/heart_monitor"
         app:tint="@color/icon_color" />
 
@@ -22,14 +22,34 @@
         android:orientation="vertical">
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="Date: "
+            android:textColor="@color/font_color"/>
+
+        <TextView
             android:id="@+id/TV_vitals_date"
             android:layout_width="match_parent"
             android:text="content"
             android:textSize="20sp"
             android:layout_height="wrap_content"
             android:textColor="@color/font_color"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="Blood Pressure: "
+            android:textColor="@color/font_color"/>
 
         <TextView
             android:id="@+id/TV_vitals_blood_pressure"
@@ -38,8 +58,18 @@
             android:text="content"
             android:textSize="20sp"
             android:textColor="@color/font_color"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="Heart Rate: "
+            android:textColor="@color/font_color"/>
 
         <TextView
             android:id="@+id/TV_vitals_heart_rate"
@@ -48,8 +78,18 @@
             android:text="content"
             android:textSize="20sp"
             android:textColor="@color/font_color"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="Other Symptoms: "
+            android:textColor="@color/font_color"/>
 
         <TextView
             android:id="@+id/TV_vitals_other_symptoms"
@@ -58,7 +98,7 @@
             android:text="content"
             android:textSize="20sp"
             android:textColor="@color/font_color"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:textAlignment="center"/>
 
     </LinearLayout>
@@ -66,14 +106,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/updateVitalsButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:backgroundTint="@color/icon_color"
             android:text="Update" />
 
@@ -81,7 +121,7 @@
             android:id="@+id/deleteVitalsButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:backgroundTint="@color/icon_color"
             android:text="Delete" />
 
