@@ -12,6 +12,8 @@ import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
 
+    //Main Database Variables and Version
+
     private static final String DATABASE_NAME = "HealthManagerDatabase";
     private static final int DATABASE_VERSION = 4;
 
@@ -36,8 +38,8 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String MEDS_ID_COL = "id";
     private static final String MEDS_NAME_COL = "name";
     private static final String MEDS_DOSE_COL = "dosage";
-    private static final String MEDS_TIME_TAKEN = "time";
-    private static final String MEDS_PRESCRIBED_BY = "prescribedBy";
+    private static final String MEDS_TIME_TAKEN_COL = "time";
+    private static final String MEDS_PRESCRIBED_BY_COL = "prescribedBy";
 
     //Notes Table
     private static final String NOTES_TABLE_NAME = "UserNotes";
@@ -79,8 +81,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 + MEDS_ID_COL + "  INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + MEDS_NAME_COL + " TEXT,"
                 + MEDS_DOSE_COL + " TEXT,"
-                + MEDS_TIME_TAKEN + " TEXT,"
-                + MEDS_PRESCRIBED_BY + " TEXT)";
+                + MEDS_TIME_TAKEN_COL + " TEXT,"
+                + MEDS_PRESCRIBED_BY_COL + " TEXT)";
 
         sqLiteDatabase.execSQL(medsQuery);
 
@@ -200,7 +202,107 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
+    //Medications Database Functions:
+    public void addMedication(String medName, String medDose, String medTime, String medPrescribedBy) {
+        SQLiteDatabase db = this.getWritableDatabase();
 
+        ContentValues values = new ContentValues();
+        values.put(MEDS_NAME_COL, medName);
+        values.put(MEDS_DOSE_COL, medDose);
+        values.put(MEDS_TIME_TAKEN_COL, medTime);
+        values.put(MEDS_PRESCRIBED_BY_COL, medPrescribedBy);
+
+        db.insert(MEDS_TABLE_NAME, null, values);
+        db.close();
+    }
+
+    public ArrayList<MedicationsModal> readMedications() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + MEDS_TABLE_NAME, null);
+
+        ArrayList<MedicationsModal> medicationsModalArrayList = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+            do {
+                medicationsModalArrayList.add(new MedicationsModal(
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4)));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return medicationsModalArrayList;
+    }
+
+    public void deleteMedication(String medName) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(MEDS_TABLE_NAME, "name=?", new String[]{medName});
+        db.close();
+    }
+
+    public void updateMedication(String originalName, String medName, String medDose, String medTime, String medPrescribedBy) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(MEDS_NAME_COL, medName);
+        values.put(MEDS_DOSE_COL, medDose);
+        values.put(MEDS_TIME_TAKEN_COL, medTime);
+        values.put(MEDS_PRESCRIBED_BY_COL, medPrescribedBy);
+
+        db.update(MEDS_TABLE_NAME, values, "name=?", new String[]{originalName});
+        db.close();
+    }
+
+
+    //Notes Database Functions:
+    public void addNote(String noteName, String noteDate, String noteContent) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(NOTES_NAME_COL, noteName);
+        values.put(NOTES_DATE_COL, noteDate);
+        values.put(NOTES_CONTENT_COL, noteContent);
+
+        db.insert(NOTES_TABLE_NAME, null, values);
+        db.close();
+    }
+
+    public ArrayList<NotesModal> readNotes() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + NOTES_TABLE_NAME, null);
+
+        ArrayList<NotesModal> notesModalArrayList = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+            do {
+                notesModalArrayList.add(new NotesModal(
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3)));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return notesModalArrayList;
+    }
+
+    public void deleteNote(String noteName) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(NOTES_TABLE_NAME, "name=?", new String[]{noteName});
+        db.close();
+    }
+
+    public void updateNote(String originalName, String noteName, String noteDate, String noteContent) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(NOTES_NAME_COL, noteName);
+        values.put(NOTES_DATE_COL, noteDate);
+        values.put(NOTES_CONTENT_COL, noteContent);
+
+        db.update(NOTES_TABLE_NAME, values, "name=?", new String[]{originalName});
+        db.close();
+    }
 
 
 
