@@ -13,13 +13,24 @@ import java.util.ArrayList;
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "HealthManagerDatabase";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
+
+    //Health History Table
     private static final String TABLE_NAME = "HealthHistory";
     private static final String ID_COL = "id";
     private static final String PROB_NAME_COL = "probName";
     private static final String DIAG_DATE_COL = "diagDate";
     private static final String DIAG_BY_COL = "diagnosedBy";
     private static final String OTHER_INFO_COL = "otherInfo";
+
+    //Vitals Table
+    private static final String VITALS_TABLE_NAME = "VitalSigns";
+    private static final String VITALS_ID_COL = "id";
+    private static final String VITALS_DATE_COL = "date";
+    private static final String VITALS_BP_COL = "bloodPressure";
+    private static final String VITALS_HR_COL = "heartRate";
+    private static final String VITALS_OTHER_COL = "otherSymptoms";
+
 
 
     public DBHelper(Context context) {
@@ -36,8 +47,18 @@ public class DBHelper extends SQLiteOpenHelper {
                 + OTHER_INFO_COL + " TEXT)";
 
         sqLiteDatabase.execSQL(query);
+
+        String vitalsQuery = "CREATE TABLE " + VITALS_TABLE_NAME + " ("
+                + VITALS_ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + VITALS_DATE_COL + " TEXT,"
+                + VITALS_BP_COL + " TEXT,"
+                + VITALS_HR_COL + " TEXT,"
+                + VITALS_OTHER_COL + " TEXT)";
+
+        sqLiteDatabase.execSQL(vitalsQuery);
     }
 
+    //Health History Database Functions:
     public void addHealthProblem(String problemName, String dateDiagnosed, String whoDiagnosed, String additionalInfo) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -89,6 +110,63 @@ public class DBHelper extends SQLiteOpenHelper {
         db.update(TABLE_NAME, values, "probName=?", new String[]{originalName});
         db.close();
     }
+
+    //Vitals Database Functions:
+    public void addVitals(String vitalsDate, String bloodPressure, String heartRate, String additionalSymptoms) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(VITALS_DATE_COL, vitalsDate);
+        values.put(VITALS_BP_COL, bloodPressure);
+        values.put(VITALS_HR_COL, heartRate);
+        values.put(VITALS_OTHER_COL, additionalSymptoms);
+
+        db.insert(VITALS_TABLE_NAME, null, values);
+        db.close();
+    }
+
+    public ArrayList<VitalsModal> readVitals() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + VITALS_TABLE_NAME, null);
+
+        ArrayList<VitalsModal> vitalsModalArrayList = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+            do {
+                vitalsModalArrayList.add(new VitalsModal(
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4)));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return vitalsModalArrayList;
+    }
+
+    public void deleteVitals(String vitalsDate) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(VITALS_TABLE_NAME, "date=?", new String[]{vitalsDate});
+        db.close();
+    }
+
+    public void updateVitals(String originalDate, String vitalsDate, String vitalsBloodPressure, String vitalsHeartRate, String vitalsOtherSymptoms) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(VITALS_DATE_COL, vitalsDate);
+        values.put(VITALS_BP_COL, vitalsBloodPressure);
+        values.put(VITALS_HR_COL, vitalsHeartRate);
+        values.put(VITALS_OTHER_COL, vitalsOtherSymptoms);
+
+        db.update(VITALS_TABLE_NAME, values, "date=?", new String[]{originalDate});
+        db.close();
+    }
+
+
+
+
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {

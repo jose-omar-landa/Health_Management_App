@@ -12,6 +12,15 @@
         android:theme="@style/Theme.HealthManagerApp"
         tools:targetApi="31">
         <activity
+            android:name=".AddVitalsPage"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateVitalsPage"
+            android:exported="false" />
+        <activity
+            android:name=".SingleViewVitalsPage"
+            android:exported="false" />
+        <activity
             android:name=".SingleViewHealthHistory"
             android:exported="false" />
         <activity
