@@ -6,14 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".UpdateHealthHistoryPage">
+    tools:context=".UpdateMedicationPage">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="40dp"
-        android:src="@drawable/health_icon"
+        android:src="@drawable/medication_bottle"
         app:tint="@color/icon_color" />
 
     <LinearLayout
@@ -22,43 +22,43 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/updateDiagnosis"
+            android:id="@+id/updateMedName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/font_color"
             android:layout_margin="20dp"
-            android:hint="Enter Health Problem..."
+            android:hint="Enter Medication Name..."
             android:textAlignment="center"/>
 
         <EditText
-            android:id="@+id/updateDateDiagnosed"
+            android:id="@+id/updateMedDose"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/font_color"
-            android:hint="Enter Date Diagnosed..."
+            android:hint="Enter Medication Dose..."
             android:layout_margin="20dp"
             android:textAlignment="center"/>
 
         <EditText
-            android:id="@+id/updateDiagnosedBy"
+            android:id="@+id/updateTimeTaken"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/font_color"
-            android:hint="Diagnosed By..."
+            android:hint="Enter Time Taken..."
             android:layout_margin="20dp"
             android:textAlignment="center"/>
 
         <EditText
-            android:id="@+id/updateImportantInfo"
+            android:id="@+id/updatePrescribedBy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/font_color"
-            android:hint="Important Information..."
+            android:hint="Medication Prescribed By..."
             android:layout_margin="20dp"
             android:textAlignment="center"/>
 
         <Button
-            android:id="@+id/updateHealthHistorySaveButton"
+            android:id="@+id/updateMedicationSaveButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"

@@ -15,7 +15,7 @@ public class DBHelper extends SQLiteOpenHelper {
     //Main Database Variables and Version
 
     private static final String DATABASE_NAME = "HealthManagerDatabase";
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 6;
 
     //Health History Table
     private static final String TABLE_NAME = "HealthHistory";
@@ -34,7 +34,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String VITALS_OTHER_COL = "otherSymptoms";
 
     //Medications Table
-    private static final String MEDS_TABLE_NAME = "Medications";
+    private static final String MEDS_TABLE_NAME = "MedicationsTable";
     private static final String MEDS_ID_COL = "id";
     private static final String MEDS_NAME_COL = "name";
     private static final String MEDS_DOSE_COL = "dosage";
@@ -78,7 +78,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         //Medications Table
         String medsQuery = "CREATE TABLE " + MEDS_TABLE_NAME + " ("
-                + MEDS_ID_COL + "  INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + MEDS_ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + MEDS_NAME_COL + " TEXT,"
                 + MEDS_DOSE_COL + " TEXT,"
                 + MEDS_TIME_TAKEN_COL + " TEXT,"
@@ -309,6 +309,9 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + VITALS_TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + MEDS_TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + NOTES_TABLE_NAME);
         onCreate(sqLiteDatabase);
     }
 

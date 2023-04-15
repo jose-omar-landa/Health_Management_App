@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/main_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SingleViewMedicationPage">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:src="@drawable/medication_bottle"
+        app:tint="@color/icon_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="Medication Name: "
+            android:textColor="@color/font_color"/>
+
+        <TextView
+            android:id="@+id/TV_med_name"
+            android:layout_width="match_parent"
+            android:text="content"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/font_color"
+            android:layout_margin="15dp"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            android:textSize="12sp"
+            android:text="Medication Dose: "
+            android:textColor="@color/font_color"/>
+
+        <TextView
+            android:id="@+id/TV_med_dose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="content"
+            android:textSize="20sp"
+            android:textColor="@color/font_color"
+            android:layout_margin="15dp"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="Time Taken: "
+            android:textColor="@color/font_color"/>
+
+        <TextView
+            android:id="@+id/TV_time_taken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="content"
+            android:textSize="20sp"
+            android:textColor="@color/font_color"
+            android:layout_margin="15dp"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="Prescribed By: "
+            android:textColor="@color/font_color"/>
+
+        <TextView
+            android:id="@+id/TV_prescribed_by"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="content"
+            android:textSize="20sp"
+            android:textColor="@color/font_color"
+            android:layout_margin="15dp"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/updateMedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/icon_color"
+            android:text="Update" />
+
+        <Button
+            android:id="@+id/deleteMedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/icon_color"
+            android:text="Delete" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
