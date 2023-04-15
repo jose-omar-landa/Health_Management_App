@@ -31,6 +31,21 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String VITALS_HR_COL = "heartRate";
     private static final String VITALS_OTHER_COL = "otherSymptoms";
 
+    //Medications Table
+    private static final String MEDS_TABLE_NAME = "Medications";
+    private static final String MEDS_ID_COL = "id";
+    private static final String MEDS_NAME_COL = "name";
+    private static final String MEDS_DOSE_COL = "dosage";
+    private static final String MEDS_TIME_TAKEN = "time";
+    private static final String MEDS_PRESCRIBED_BY = "prescribedBy";
+
+    //Notes Table
+    private static final String NOTES_TABLE_NAME = "UserNotes";
+    private static final String NOTES_ID_COL = "id";
+    private static final String NOTES_NAME_COL = "name";
+    private static final String NOTES_DATE_COL = "date";
+    private static final String NOTES_CONTENT_COL = "content";
+
 
 
     public DBHelper(Context context) {
@@ -39,6 +54,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        //Health History Table
         String query = "CREATE TABLE " + TABLE_NAME + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + PROB_NAME_COL + " TEXT,"
@@ -48,6 +64,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(query);
 
+        //Vital Signs Table
         String vitalsQuery = "CREATE TABLE " + VITALS_TABLE_NAME + " ("
                 + VITALS_ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + VITALS_DATE_COL + " TEXT,"
@@ -56,6 +73,25 @@ public class DBHelper extends SQLiteOpenHelper {
                 + VITALS_OTHER_COL + " TEXT)";
 
         sqLiteDatabase.execSQL(vitalsQuery);
+
+        //Medications Table
+        String medsQuery = "CREATE TABLE " + MEDS_TABLE_NAME + " ("
+                + MEDS_ID_COL + "  INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + MEDS_NAME_COL + " TEXT,"
+                + MEDS_DOSE_COL + " TEXT,"
+                + MEDS_TIME_TAKEN + " TEXT,"
+                + MEDS_PRESCRIBED_BY + " TEXT)";
+
+        sqLiteDatabase.execSQL(medsQuery);
+
+        //Notes Table
+        String notesQuery = "CREATE TABLE " + NOTES_TABLE_NAME + " ("
+                + NOTES_ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + NOTES_NAME_COL + " TEXT,"
+                + NOTES_DATE_COL + " TEXT,"
+                + NOTES_CONTENT_COL + " TEXT)";
+
+        sqLiteDatabase.execSQL(notesQuery);
     }
 
     //Health History Database Functions:
