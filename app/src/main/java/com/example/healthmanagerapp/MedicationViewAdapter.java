@@ -41,7 +41,7 @@ public class MedicationViewAdapter extends RecyclerView.Adapter<MedicationViewAd
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(context, SingleViewHealthHistory.class);
+                Intent i = new Intent(context, SingleViewMedicationPage.class);
 
                 i.putExtra("name", modal.getName());
                 i.putExtra("dosage", modal.getDose());
@@ -55,7 +55,7 @@ public class MedicationViewAdapter extends RecyclerView.Adapter<MedicationViewAd
 
     @Override
     public int getItemCount() {
-        return 0;
+        return medicationsModalArrayList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
