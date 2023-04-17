@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class HealthHistoryPage extends AppCompatActivity {
 
-    ImageButton addHealthProblem;
+    ImageButton addHealthProblem, backButton;
     private ArrayList<HealthHistoryModal> healthHistoryModalArrayList;
     private DBHelper dbHelper;
     private HealthHistoryViewAdapter healthHistoryViewAdapter;
@@ -26,6 +26,7 @@ public class HealthHistoryPage extends AppCompatActivity {
         setContentView(R.layout.activity_health_history_page);
 
         addHealthProblem = findViewById(R.id.addHealthHistButton);
+        backButton = findViewById(R.id.healthHistBackButton);
 
         healthHistoryModalArrayList = new ArrayList<>();
         dbHelper = new DBHelper(HealthHistoryPage.this);
@@ -44,6 +45,14 @@ public class HealthHistoryPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(HealthHistoryPage.this, AddHealthHistoryPage.class);
+                startActivity(i);
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(HealthHistoryPage.this, MainActivity.class);
                 startActivity(i);
             }
         });

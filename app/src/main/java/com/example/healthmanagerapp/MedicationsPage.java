@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class MedicationsPage extends AppCompatActivity {
 
-    ImageButton addMedication;
+    ImageButton addMedication, backButton;
     private ArrayList<MedicationsModal> medicationsModalArrayList;
     private DBHelper dbHelper;
     private MedicationViewAdapter medicationViewAdapter;
@@ -26,6 +26,7 @@ public class MedicationsPage extends AppCompatActivity {
 
 
         addMedication = findViewById(R.id.addMedicationsButton);
+        backButton = findViewById(R.id.medsPageBackButton);
 
         medicationsModalArrayList = new ArrayList<>();
         dbHelper = new DBHelper(MedicationsPage.this);
@@ -44,6 +45,14 @@ public class MedicationsPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MedicationsPage.this, AddMedicationPage.class);
+                startActivity(i);
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MedicationsPage.this, MainActivity.class);
                 startActivity(i);
             }
         });

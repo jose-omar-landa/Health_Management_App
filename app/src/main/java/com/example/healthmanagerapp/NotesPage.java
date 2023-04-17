@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class NotesPage extends AppCompatActivity {
 
-    ImageButton addNoteImageButton;
+    ImageButton addNoteImageButton, backButton;
     private ArrayList<NotesModal> notesModalArrayList;
     private DBHelper dbHelper;
     private NotesViewAdapter notesViewAdapter;
@@ -25,6 +25,7 @@ public class NotesPage extends AppCompatActivity {
         setContentView(R.layout.activity_notes_page);
 
         addNoteImageButton = findViewById(R.id.addNotesButton);
+        backButton = findViewById(R.id.notesPageBackButton);
 
         notesModalArrayList = new ArrayList<>();
         dbHelper = new DBHelper(NotesPage.this);
@@ -43,6 +44,14 @@ public class NotesPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(NotesPage.this, AddNotePage.class);
+                startActivity(i);
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(NotesPage.this, MainActivity.class);
                 startActivity(i);
             }
         });

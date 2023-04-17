@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class VitalsPage extends AppCompatActivity {
 
-    ImageButton addVitalSigns;
+    ImageButton addVitalSigns, backButton;
     private ArrayList<VitalsModal> vitalsModalArrayList;
     private DBHelper dbHelper;
     private VitalsViewAdapter vitalsViewAdapter;
@@ -25,6 +25,7 @@ public class VitalsPage extends AppCompatActivity {
         setContentView(R.layout.activity_vitals_page);
 
         addVitalSigns = findViewById(R.id.addVitalsButton);
+        backButton = findViewById(R.id.vitalsPageBackButton);
 
         vitalsModalArrayList = new ArrayList<>();
         dbHelper = new DBHelper(VitalsPage.this);
@@ -43,6 +44,14 @@ public class VitalsPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(VitalsPage.this, AddVitalsPage.class);
+                startActivity(i);
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(VitalsPage.this, MainActivity.class);
                 startActivity(i);
             }
         });
