@@ -31,10 +31,13 @@ A few of the things you can do with My Healh Manager:
 
 ## Screenshots
 
-
+<div>
 ![HomeScreenResized](https://user-images.githubusercontent.com/121825095/234681987-e85a97ea-a3cb-4d6c-85a5-3d3fde2868c1.jpg)
-![HistoryScreenResized](https://user-images.githubusercontent.com/121825095/234682249-11dbdfd4-4227-4276-93df-d7f30bc8c8f2.jpg)
 ![SingleViewHistoryScreenResized](https://user-images.githubusercontent.com/121825095/234682264-dd6b6ee5-0996-4a35-8a20-fee57d9b0738.jpg)
-![VitalsScreenResized](https://user-images.githubusercontent.com/121825095/234682282-8bd07672-04bd-45e5-9b1f-a51d407a315e.jpg)
+</div>
 
+<div>
+![HistoryScreenResized](https://user-images.githubusercontent.com/121825095/234682249-11dbdfd4-4227-4276-93df-d7f30bc8c8f2.jpg)
+![VitalsScreenResized](https://user-images.githubusercontent.com/121825095/234682282-8bd07672-04bd-45e5-9b1f-a51d407a315e.jpg)
+</div>
 
