@@ -28,7 +28,6 @@ A few of the things you can do with My Healh Manager:
 * Add your health history, such as medical conditions, into your phone in order to show to medical providers if needed. You can also view, update, or delete any entered health history.
 * Add your current medications. Added medications can then be viewed, updated, or deleted.
 * Add your vital signs such as your blood pressure or heart rate as a log for your appointments.
-* Apply labels and assignees
 * Create notes with any information you may need for upcoming appointments.
 
 ## Screenshots
