@@ -31,6 +31,7 @@ A few of the things you can do with My Healh Manager:
 
 ## Screenshots
 
-![HomeScreenResized](https://user-images.githubusercontent.com/121825095/234681894-bb9474f0-4205-43c6-8af7-45770a9c4c6e.jpg)
+
+![HomeScreenResized](https://user-images.githubusercontent.com/121825095/234681987-e85a97ea-a3cb-4d6c-85a5-3d3fde2868c1.jpg)
 
 
