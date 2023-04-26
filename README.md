@@ -29,7 +29,7 @@ A few of the things you can do with My Healh Manager:
 * Apply labels and assignees
 * Create notes with any information you may need for upcoming appointments.
 
-##Screenshots
+## Screenshots
 
 
 
