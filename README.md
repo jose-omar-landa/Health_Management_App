@@ -18,7 +18,7 @@
 
 ## Introduction
 
-With My Health Manager, you can manage your health history, medications, and more in order to make your appointments streamlined and to keep all of your health history in one place!
+With My Health Manager, you can manage your health history, medications, and more in order to streamline your appointments and to keep all of your health history in one place!
 
 
 ## Features
