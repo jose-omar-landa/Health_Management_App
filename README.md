@@ -11,6 +11,8 @@
 - [Introduction](#introduction)
 - [Features](#features)
 - [Screenshots](#screenshots)
+- [Development](#development)
+- [Feedback](#feedback)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -39,5 +41,14 @@ A few of the things you can do with My Healh Manager:
 ![HistoryScreenResized](https://user-images.githubusercontent.com/121825095/234682249-11dbdfd4-4227-4276-93df-d7f30bc8c8f2.jpg)
 
 ![VitalsScreenResized](https://user-images.githubusercontent.com/121825095/234682282-8bd07672-04bd-45e5-9b1f-a51d407a315e.jpg)
+
+
+## Development
+
+This app was developed on Android Studio using Java and SQLite. 
+
+## Feedback
+
+To provide feedback, or if you have any questions/comments, feel free to contact me via [Twitter](https://twitter.com/omarlandadev) or [LinkedIn](https://www.linkedin.com/in/jose-landa-537939129/).
 
 
